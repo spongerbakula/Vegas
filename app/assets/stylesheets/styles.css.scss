@@ -3,7 +3,8 @@ $baseFontFamily: Raleway;
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 $navbarLinkColor: #EEE;
 $navbarHighlightColor: #585D5E;
-
+$navbarLinkColorHover: #968e8e;
+$navbarLinkColorActive: #968e8e;
 
 @import 'bootstrap';
 @import 'bootstrap-responsive';
@@ -29,4 +30,7 @@ body {
 	margin-top: 50px;
 }
 
+.brand:hover {
+	color:#968e8e;
+}
 
