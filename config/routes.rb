@@ -1,9 +1,16 @@
 Blog::Application.routes.draw do
+   
+
+  devise_for :users
+
   resources :posts do 
     resources :comments
 end
 
   get "home/index"
+  get 'about' => 'pages#about'
+  get 'top' => 'pages#top'
+  get 'random' => 'pages#random'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

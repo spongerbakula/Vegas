@@ -5,12 +5,13 @@ $navbarLinkColor: #EEE;
 $navbarHighlightColor: #585D5E;
 $navbarLinkColorHover: #968e8e;
 $navbarLinkColorActive: #968e8e;
+$navbarBrandColor: #EEE;
 
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 
 body {
-	padding-top: 40px;
+	padding-top: 50px;
 }
 .footer {
 	margin-top: 50px;
@@ -30,7 +31,15 @@ body {
 	margin-top: 50px;
 }
 
+
+
 .brand:hover {
-	color:#968e8e;
+	color:#968e8e !important;
+	text-decoration: none !important;
+}
+
+.brand {
+	background:#EEE !important;
+
 }
 
