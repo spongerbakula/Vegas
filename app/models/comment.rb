@@ -1,5 +1,8 @@
 class Comment < ActiveRecord::Base
   
-  attr_accessible :body, :commenter, :post
+  attr_accessible :body, :post
   belongs_to :post
+
+
+  validates :body, :length => {:minimum => 1}
 end
