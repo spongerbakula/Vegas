@@ -5,4 +5,6 @@ class Comment < ActiveRecord::Base
 
 
   validates :body, :length => {:minimum => 1}
+
+  belongs_to :user
 end

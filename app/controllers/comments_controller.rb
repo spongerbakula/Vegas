@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	before_filter :authenticate_user!
 
 # http_basic_authenticate_with :name => "guest", :password => "1234", :
 
@@ -10,7 +11,8 @@ def create
 
 def destroy
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
+    @comment = current_user.comments.find(params[:id])
+  
     @comment.destroy
     redirect_to post_path(@post)
   end
