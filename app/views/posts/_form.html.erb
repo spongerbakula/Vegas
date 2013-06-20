@@ -19,6 +19,7 @@
       </div>
       <div class="field">
         <br />
+        <p><em>250 word max</em></p>
         <%= post_form.text_area :content, :rows => 10,  :style => "width:380px;" %>
       </div>
       <div class="actions">
@@ -27,17 +28,20 @@
     
     <% else %>
         <div class="field">
-        <%= post_form.label :name %><br />
-        <%= post_form.text_field :name %>
+        <%= post_form.label :username %>
+        <%= post_form.text_field :username, :value => "Anonymous" %>
       </div>
          <div class="field">
-        <%= post_form.label :title %><br />
+        <%= post_form.label :title %>
         <%= post_form.text_field :title %>
       </div>
       <div class="field">
         <br />
+
         <%= post_form.text_area :content, :rows => 10,  :style => "width:380px;" %>
+        <p><em>250 word max</em></p>
       </div>
+      <br>
       <div class="actions">
         
         <%= post_form.submit %>

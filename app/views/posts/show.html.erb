@@ -15,13 +15,19 @@
 		 <br />
 			<h4>Comments</h4>
 			<%= render @post.comments %>
-			 
+<br />
+<br />
 			<h4>Add a comment:</h4>
 			<%= render "comments/form" %>
 		 	</div>
  </div>
 	
 <br />
- 
-<div class="btn"><%= link_to 'Edit Post', edit_post_path(@post) %></div><br><br>
+
+ <% if current_user == @post.user %> <!-- this is @post.user, because it's been defined above as @post.  In the _post partial, it is just post.user since partials are different-->
+
+	<div class="btn"><%= link_to 'Edit Post', edit_post_path(@post) %></div>
+<% end %>
+
+<br><br>
 <div class="btn"><%= link_to 'Back', posts_path %></div>

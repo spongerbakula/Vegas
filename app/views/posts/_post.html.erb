@@ -1,8 +1,18 @@
-  <tr>
-      <td><%= post.user.username if post.user %></td>
-      <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td><%= link_to 'View', post %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+<div class="well">
+  <p> <%= post.title %></p>
+      
+      <br />
+      <%= post.content %>
+      <div class="pull-right"><%= link_to 'View', post %></div>
+      
+      <% if current_user == post.user %> <!--this is just post.user, not @post.user since it's a partial-->
+      
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      
+      <% end %>
+      <br />
+      <br />
+      <p style="font-size:75%;"><em>by <%= post.user.username if post.user %></em></p>
+  
+</div>

@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    @post = current_user.posts.new # <this creates a user id for pins
+    @post = Post.new # <this creates a user id for posts
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = current_user.posts.new(params[:post])
+    @post = Post.new(params[:post])
 
     respond_to do |format|
       if @post.save
