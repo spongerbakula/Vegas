@@ -1,18 +1,22 @@
 <div class="well">
-  <p> <%= post.title %></p>
+  <p><h4> <%= post.title %></h4></p>
       
       <br />
       <%= post.content %>
-      <div class="pull-right"><%= link_to 'View', post %></div>
+      <br />
+      
       
       <% if current_user == post.user %> <!--this is just post.user, not @post.user since it's a partial-->
-      
-      <%= link_to 'Edit', edit_post_path(post) %>
-      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-      
+      <div class="pull-right">
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
       <% end %>
       <br />
       <br />
-      <p style="font-size:75%;"><em>by <%= post.user.username if post.user %></em></p>
+
+
+      <p style="font-size:75%;"><%= link_to 'Comments', post %>
+      <div class="pull-right"><em>by <%= post.user.username if post.user %></em></div></p>
   
 </div>

@@ -1,20 +1,8 @@
-<div class="well">
-	
-		<div class="pull-right">
-			<div class="newPost">
-				<div class="btn btn-inverse">
-					<%= link_to 'New Story', new_post_path, {:style => 'color: #FFFFFF'} %>
-				</div>
-			</div>
-		</div>
-		<h1>The Stories....</h1>
-	
-</div>
+<%= render 'pages/home' %>
+
 <br>
 
-
-
-  <%= render @posts %>
+<%= render @posts %>
 
 <br />
 
